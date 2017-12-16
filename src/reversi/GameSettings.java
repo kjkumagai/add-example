@@ -1,8 +1,7 @@
 package reversi;
 
 import javax.swing.*;
-import java.awt.Dimension;
-import java.awt.BorderLayout;
+import java.awt.*;
 import java.awt.event.*;
 
 public class GameSettings extends JFrame implements ActionListener{
@@ -17,9 +16,9 @@ public class GameSettings extends JFrame implements ActionListener{
 
     public GameSettings(){
 
-        String[] player1 = {"Choose", "MyPlayer", "Computer"};
+        String[] player1 = {"Choose", "MyPlayer", "Computer", "Random"};
 
-        String[] player2 = {"Choose", "MyPlayer", "Computer"};
+        String[] player2 = {"Choose", "MyPlayer", "Computer", "Random"};
 
         startCombo = new JComboBox(player1);
         startCombo.setPreferredSize(new Dimension(115, 30));
@@ -69,12 +68,18 @@ public class GameSettings extends JFrame implements ActionListener{
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     frame.setVisible(true);
 
+
                 }else if (lastP.equals("MyPlayer")){
 
                     ReversiFrame1 frame = new ReversiFrame1();
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     frame.setVisible(true);
 
+                }else if (lastP.equals("Random")){
+
+                    ReversiFrame4 frame = new ReversiFrame4();
+                    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    frame.setVisible(true);
                 }
             }else if (firstP.equals("Computer")){
                 if (lastP.equals("Computer")){
@@ -90,6 +95,10 @@ public class GameSettings extends JFrame implements ActionListener{
                     frame.setVisible(true);
 
                 }
+            }
+
+            if (!(firstP == "Choose" || lastP == "Choose")) {
+                setVisible(false);
             }
         }
     }

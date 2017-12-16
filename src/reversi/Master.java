@@ -36,11 +36,6 @@ public class Master {
 
 	public void addPlayer(Player firstPlayer, Player secondPlayer) {
 
-		gameSettings.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		gameSettings.setBounds(10, 10, 300, 200);
-		gameSettings.setTitle("Game Settings");
-		gameSettings.setVisible(true);
-
 		this.firstPlayer = firstPlayer;
 		this.secondPlayer = secondPlayer;
 		playerList.add(firstPlayer);

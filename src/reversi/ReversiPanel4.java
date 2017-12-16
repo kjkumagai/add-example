@@ -1,14 +1,12 @@
 package reversi;
 
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.event.ActionEvent;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import javax.swing.*;
 
 @SuppressWarnings("serial")
-public class ReversiPanel extends JPanel implements MouseListener, Runnable {
+public class ReversiPanel4 extends JPanel implements MouseListener, Runnable {
 	private static final int PANEL_WIDTH = 800;
 	private static final int PANEL_HEIGHT = 801;
 	private static final int BOARD_SIZE = 800;
@@ -19,7 +17,9 @@ public class ReversiPanel extends JPanel implements MouseListener, Runnable {
 	private Player firstPlayer;
 	private Player secondPlayer;
 
-	public ReversiPanel(ConsolPanel consolPanel) {
+	private GameSettings gameSettings;
+
+	public ReversiPanel4(ConsolPanel consolPanel) {
 		setPreferredSize(new Dimension(PANEL_WIDTH, PANEL_HEIGHT));
 		addMouseListener(this);
 
@@ -27,7 +27,7 @@ public class ReversiPanel extends JPanel implements MouseListener, Runnable {
 		board = new Board(BOARD_SIZE, BOARD_SIZE, this);
 
 		firstPlayer = new MyPlayer(board, master, "Player 1");
-		secondPlayer = new Player(board, master, "Player 2");
+		secondPlayer = new RandomPlayer(board, master, "Player 2");
 
 
 		master.addPlayer(firstPlayer, secondPlayer);
