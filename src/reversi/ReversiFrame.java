@@ -22,7 +22,24 @@ public class ReversiFrame extends JFrame {
 
 		pack();
 	}
+	/*
+	public void ReversiFrame1() {
+		setTitle("Reversi");
 
+		setLayout(new BorderLayout());
+
+		ConsolPanel consolPanel = new ConsolPanel();
+		ReversiPanel panel = new ReversiPanel(consolPanel);
+
+		panel.ReversiPanel1(consolPanel);
+
+		Container contentPane = getContentPane();
+		contentPane.add(panel, BorderLayout.NORTH);
+		contentPane.add(consolPanel, BorderLayout.SOUTH);
+
+		pack();
+	}
+	*/
 
 	public static void main(String[] args) {
 

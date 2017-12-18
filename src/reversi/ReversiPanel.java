@@ -35,7 +35,24 @@ public class ReversiPanel extends JPanel implements MouseListener, Runnable {
 		gameThread = new Thread(this);
 		gameThread.start();
 	}
+	/*
+	public void ReversiPanel1(ConsolPanel consolPanel) {
+		setPreferredSize(new Dimension(PANEL_WIDTH, PANEL_HEIGHT));
+		addMouseListener(this);
 
+		master = new Master(consolPanel);
+		board = new Board(BOARD_SIZE, BOARD_SIZE, this);
+
+		firstPlayer = new MyPlayer(board, master, "Player 1");
+		secondPlayer = new MyPlayer(board, master, "Player 2");
+
+
+		master.addPlayer(firstPlayer, secondPlayer);
+
+		gameThread = new Thread(this);
+		gameThread.start();
+	}
+	*/
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);

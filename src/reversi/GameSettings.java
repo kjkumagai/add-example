@@ -74,6 +74,12 @@ public class GameSettings extends JFrame implements ActionListener{
                     ReversiFrame1 frame = new ReversiFrame1();
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     frame.setVisible(true);
+                    /*
+                    ReversiFrame frame = new ReversiFrame();
+                    frame.ReversiFrame1();
+                    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    frame.setVisible(true);
+                    */
 
                 }else if (lastP.equals("Random")){
 

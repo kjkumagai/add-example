@@ -1,11 +1,15 @@
 package reversi;
 
+import java.awt.*;
+
 public class MyPlayer extends Player {
 
 	private boolean inputState = false;
 	private boolean inputFlag = false;
 	private int mauseX = 0;
 	private int mauseY = 0;
+
+	private Masu masu;
 
 	public MyPlayer(Board board, Master master, String name) {
 		
