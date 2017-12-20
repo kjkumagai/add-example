@@ -6,26 +6,23 @@ import java.awt.event.*;
 
 public class GameSettings extends JFrame implements ActionListener{
 
-    JComboBox<String> startCombo = null;
-    JComboBox<String> endCombo = null;
-    JLabel label;
+    private JComboBox<String> startCombo;
+    private JComboBox<String> endCombo;
 
-    public String firstP;
-    public String lastP;
+    GameSettings(){
 
-
-    public GameSettings(){
+        JLabel label;
 
         String[] player1 = {"Choose", "MyPlayer", "Computer", "Random"};
 
         String[] player2 = {"Choose", "MyPlayer", "Computer", "Random"};
 
-        startCombo = new JComboBox(player1);
+        startCombo = new JComboBox<>(player1);
         startCombo.setPreferredSize(new Dimension(115, 30));
 
         startCombo.addActionListener(this);
 
-        endCombo = new JComboBox(player2);
+        endCombo = new JComboBox<>(player2);
         endCombo.setPreferredSize(new Dimension(115, 30));
 
         endCombo.addActionListener(this);
@@ -51,6 +48,8 @@ public class GameSettings extends JFrame implements ActionListener{
     }
 
     public void actionPerformed(ActionEvent e) {
+        String firstP;
+        String lastP;
         String cmd = e.getActionCommand();
 
         if (cmd.equals("Start a Game")) {
@@ -58,18 +57,16 @@ public class GameSettings extends JFrame implements ActionListener{
             firstP = (String)startCombo.getSelectedItem();
             lastP = (String)endCombo.getSelectedItem();
 
-            //label.setText("START:" + start + ", END:" + end);
 
-
-            if (firstP.equals("MyPlayer")){
-                if (lastP.equals("Computer")){
+            if ("MyPlayer".equals(firstP)){
+                if ("Computer".equals(lastP)){
 
                     ReversiFrame frame = new ReversiFrame();
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     frame.setVisible(true);
 
 
-                }else if (lastP.equals("MyPlayer")){
+                }else if ("MyPlayer".equals(lastP)){
 
                     ReversiFrame1 frame = new ReversiFrame1();
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -81,20 +78,20 @@ public class GameSettings extends JFrame implements ActionListener{
                     frame.setVisible(true);
                     */
 
-                }else if (lastP.equals("Random")){
+                }else if ("Random".equals(lastP)){
 
                     ReversiFrame4 frame = new ReversiFrame4();
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     frame.setVisible(true);
                 }
-            }else if (firstP.equals("Computer")){
-                if (lastP.equals("Computer")){
+            }else if ("Computer".equals(firstP)){
+                if ("Computer".equals(lastP)){
 
                     ReversiFrame2 frame = new ReversiFrame2();
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     frame.setVisible(true);
 
-                }else if (lastP.equals("MyPlayer")){
+                }else if ("MyPlayer".equals(lastP)){
 
                     ReversiFrame3 frame = new ReversiFrame3();
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -103,7 +100,7 @@ public class GameSettings extends JFrame implements ActionListener{
                 }
             }
 
-            if (!(firstP == "Choose" || lastP == "Choose")) {
+            if (!("Choose".equals(firstP) || "Choose".equals(lastP))) {
                 setVisible(false);
             }
         }
